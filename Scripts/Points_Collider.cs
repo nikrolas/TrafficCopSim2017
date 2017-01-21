@@ -1,38 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 public class Points_Collider : MonoBehaviour {
-
-
     public int score;
-
-    private Rigidbody2D rb2d;
-
+    public Text scoreText;
 
 	// Use this for initialization
-	void Start () {
-
-        rb2d = GetComponent<Rigidbody2D>();
+	void Start ()
+    {
         score = 0;
+        getScoreText();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
-    void OnTriggerEnter(Collider2D coll) {
-
-        if(coll.CompareTag("")) {
+    void OnTriggerEnter(Collider2D coll)
+    {
+        if (coll.CompareTag("")) {
             score += 1;
-        }
-
-        if(coll.CompareTag(""))
-        {
+            getScoreText();
+            coll.gameObject.SetActive(false);
             Destroy(coll.gameObject);
         }
+    }
+
+    void getScoreText()
+    {
+        scoreText.text = "Count: " + score.ToString();
     }
 }
