@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Car_Spawner : MonoBehaviour {
+public class Points_Collider : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
