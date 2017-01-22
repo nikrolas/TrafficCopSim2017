@@ -28,13 +28,13 @@ public class Controller_script : MonoBehaviour {
 		if (Input.GetKey(KeyCode.A)) {
 			BroadcastMessage("CopLeft");
 			if (Input.GetKey(KeyCode.RightArrow)) {
-				BroadcastMessage("RightRight");
+				BroadcastMessage("Right");
 			 } 
 			if (Input.GetKey(KeyCode.DownArrow)) {
 				BroadcastMessage("RightDown");
 			 } 
 			if (Input.GetKey(KeyCode.UpArrow)) {
-				BroadcastMessage("Right");
+				BroadcastMessage("RightUp");
 			 } 
 		}
 
