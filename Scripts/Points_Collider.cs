@@ -6,18 +6,17 @@ using UnityEngine.UI;
 public class Points_Collider : MonoBehaviour {
 
 
-    public int score;
+    public static int score = 0;
     public Text scoreText;
 
 	void Start ()
     {
-        score = 0;
         getScoreText();
 	}
 	
 	void Update ()
     {
-		
+	
 	}
 
     void OnTriggerEnter2D(Collider2D coll)
