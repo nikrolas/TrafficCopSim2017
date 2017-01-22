@@ -47,30 +47,30 @@ public class LeftCarScript : MonoBehaviour
        				}
     		}
     	else {
-    		
+
 			transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
     	}
 
-	   
 
-		
+
+
 	        //use one spawner, make 4 cars spawn from their locations
 	        //rotate based on direction
 
         //transform.position += transform.right * Time.deltaTime * movementSpeed;
-    } 
+    }
 
 	private void OnTriggerEnter2D(Collider2D collision)
     {
-    	if(collision.name == "Stop_Collider") { 
-			movementSpeed = 0;
-        	collidable = true;
-			print("hit stop collider");
-		
+    	if(collision.name == "Stop_Collider") {
+  			movementSpeed = 0;
+        collidable = true;
+        print("hit stop collider");
+
     	}
    		if (collision.name == "temp_car(Clone)") {
-   			if(collidable) {
-   				print("dont do anything");
+   			if(collidable && collision.gameObject.GetComponent<LeftCarScript>().collidable) {
+          Application.LoadLevel("GameOver");
    			}
 			else {
 				movementSpeed=0;
@@ -95,6 +95,6 @@ public class LeftCarScript : MonoBehaviour
     }
 
 	void Right() {
-		straight = true; 
+		straight = true;
     }
 }
