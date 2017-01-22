@@ -9,12 +9,6 @@ public class Points_Collider : MonoBehaviour {
     public int score;
     public Text scoreText;
 
-    public BoxCollider2D topRoad;
-    public BoxCollider2D bottomRoad;
-    public BoxCollider2D leftRoad;
-    public BoxCollider2D rightRoad;
-
-
 	void Start ()
     {
         score = 0;
@@ -26,10 +20,10 @@ public class Points_Collider : MonoBehaviour {
 		
 	}
 
-    void OnTriggerEnter(Collider2D coll)
+    void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.name == "temp_car") {
-            score += 1;
+        if (coll.name == "temp_car(Clone)") {
+            score++;
             getScoreText();
             coll.gameObject.SetActive(false);
             Destroy(coll.gameObject);
