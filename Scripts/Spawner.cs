@@ -48,7 +48,7 @@ public class Spawner : MonoBehaviour {
 //			GameObject CarR =Instantiate (carList, new Vector3(9.33f, 1.17f, 0), transform.rotation *  Quaternion.Euler(0, 0, 180));
 //			CarR.transform.parent = gameObject.transform;
 
-			yield return new WaitForSeconds(1);			
+			yield return new WaitForSeconds(4);			
 		}
 	}	
 }
